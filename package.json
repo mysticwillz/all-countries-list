@@ -1,0 +1,29 @@
+{
+  "name": "all-countries-list",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "countries",
+    "flags",
+    "unicode",
+    "emoji",
+    "i18n",
+    "iso",
+    "country-list"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mysticwillz/all-countries-list.git"
+  },
+  "author": "Eze Williams Ezebuilo",
+  "license": "MIT",
+  "description": "A simple array of all countries with ISO 3166 codes, Unicode points, and flag emojis.",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
