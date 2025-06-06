@@ -6,7 +6,7 @@ export interface Country {
   dialCode: string;
 }
 
-export const countries: Country[] = [
+const unfilteredCountries = [
   {
     name: "Aruba",
     code: "AW",
@@ -1351,13 +1351,7 @@ export const countries: Country[] = [
     emoji: "🇸🇦",
     dialCode: "+966",
   },
-  {
-    name: "Sudan",
-    code: "SD",
-    unicode: "U+1F1F8 U+1F1E9",
-    emoji: "🇸🇩",
-    dialCode: "+249",
-  },
+
   {
     name: "Senegal",
     code: "SN",
@@ -1794,3 +1788,19 @@ export const countries: Country[] = [
     dialCode: "+263",
   },
 ];
+
+const seen = new Set<string>();
+export const countries: Country[] = unfilteredCountries
+  .filter((country) => {
+    if (seen.has(country.code)) return false;
+    seen.add(country.code);
+    return true;
+  })
+  .map(({ name, code, unicode, emoji, dialCode }) => ({
+    name,
+    code,
+    unicode,
+    emoji,
+    dialCode,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
