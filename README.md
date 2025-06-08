@@ -1,6 +1,6 @@
 # all-countries-list
 
-**A comprehensive array of all countries with ISO 3166-1 alpha-2 codes, Unicode representations, and emoji flags.**
+**A comprehensive array of all countries with ISO 3166-1 alpha-2 codes, Unicode representations, country dial code and emoji flags.**
 
 ## 🌍 Overview
 
@@ -32,12 +32,13 @@ yarn add all-countries-list
 ```js
 const countries = require("all-countries-list");
 
-console.log(countries[0]);
+console.log(countries[1]);
 // {
 //   name: 'Afghanistan',
 //   code: 'AF',
 //   unicode: 'U+1F1E6 U+1F1EB',
-//   emoji: '🇦🇫'
+//   emoji: '🇦🇫',
+//   dialCode:'+93'
 // }
 ```
 
@@ -46,12 +47,13 @@ console.log(countries[0]);
 ```js
 import countries from "all-countries-list";
 
-console.log(countries[0]);
+console.log(countries[1]);
 // {
 //   name: 'Afghanistan',
 //   code: 'AF',
 //   unicode: 'U+1F1E6 U+1F1EB',
-//   emoji: '🇦🇫'
+//   emoji: '🇦🇫',
+//   dialCode:'+93'
 // }
 ```
 
@@ -65,6 +67,7 @@ interface Country {
   code: string;
   unicode: string;
   emoji: string;
+  dialCode: string;
 }
 
 const firstCountry: Country = countries[0];
@@ -80,6 +83,7 @@ Each country object has the following structure:
   code: string; // e.g., "NG"
   unicode: string; // e.g., "U+1F1F3 U+1F1EC"
   emoji: string; // e.g., "🇳🇬"
+  dialCode: string; // e.g "+234"
 }
 ```
 
